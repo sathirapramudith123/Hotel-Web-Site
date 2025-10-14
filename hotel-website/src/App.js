@@ -9,6 +9,7 @@ import Booking from './pages/Booking';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import BookingConfirmation from './pages/BookingConfirmation';
 import './App.css';
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/rooms" element={<Rooms />} />
+            <Route path="/rooms/*" element={<Rooms />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/booking-confirmation" element={<BookingConfirmation />} />
           </Routes>
         </main>
         <Footer />

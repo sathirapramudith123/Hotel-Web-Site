@@ -1,5 +1,4 @@
-import { ROOM_TYPES } from './constants';
-
+// Remove the unused import
 export const formatCurrency = (amount) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',

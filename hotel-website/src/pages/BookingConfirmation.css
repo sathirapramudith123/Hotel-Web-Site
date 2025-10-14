@@ -1,0 +1,181 @@
+.booking-confirmation {
+  padding: 2rem 0;
+  background: var(--background-light);
+  min-height: 100vh;
+}
+
+.confirmation-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.confirmation-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+  font-weight: bold;
+}
+
+.confirmation-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.confirmation-details {
+  padding: 2rem;
+}
+
+.booking-reference {
+  background: var(--background-light);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  border: 2px dashed var(--border-color);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.special-requests {
+  background: var(--background-light);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.special-requests h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.price-summary {
+  background: var(--background-light);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.price-summary h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 2px solid var(--border-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.confirmation-note {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.confirmation-note p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.confirmation-error {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.confirmation-error h2 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .confirmation-actions {
+    flex-direction: column;
+  }
+  
+  .confirmation-header {
+    padding: 2rem 1rem;
+  }
+  
+  .confirmation-header h1 {
+    font-size: 2rem;
+  }
+}
