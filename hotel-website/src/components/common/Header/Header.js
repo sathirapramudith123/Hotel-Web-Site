@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,6 +28,7 @@ const Header = () => {
             <button 
               className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
               onClick={toggleMenu}
+              aria-label="Toggle menu"
             >
               <span></span>
               <span></span>

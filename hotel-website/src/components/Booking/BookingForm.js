@@ -10,7 +10,7 @@ import './BookingForm.css';
 const BookingForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { bookingData, updateBooking, submitBooking, isLoading } = useBooking();
+  const { updateBooking, submitBooking, isLoading } = useBooking();
   
   const [formData, setFormData] = useState({
     checkIn: '',

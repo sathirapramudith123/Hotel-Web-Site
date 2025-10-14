@@ -1,3 +1,5 @@
+import { ROOM_TYPES } from './constants';
+
 export const formatCurrency = (amount) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -31,4 +33,39 @@ export const validatePhone = (phone) => {
 
 export const generateBookingId = () => {
   return `BK${Date.now()}${Math.random().toString(36).substr(2, 5)}`.toUpperCase();
+};
+
+// Add the missing validation function
+export const validateBookingForm = (formData) => {
+  const errors = {};
+
+  if (!formData.checkIn) {
+    errors.checkIn = 'Check-in date is required';
+  }
+
+  if (!formData.checkOut) {
+    errors.checkOut = 'Check-out date is required';
+  }
+
+  if (formData.checkIn && formData.checkOut) {
+    const checkIn = new Date(formData.checkIn);
+    const checkOut = new Date(formData.checkOut);
+    
+    if (checkOut <= checkIn) {
+      errors.checkOut = 'Check-out date must be after check-in date';
+    }
+  }
+
+  if (!formData.guests || formData.guests < 1) {
+    errors.guests = 'Number of guests is required';
+  }
+
+  if (!formData.roomType) {
+    errors.roomType = 'Room type is required';
+  }
+
+  return {
+    isValid: Object.keys(errors).length === 0,
+    errors
+  };
 };

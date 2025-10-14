@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useRooms } from '../hooks/useRooms';
 import RoomCard from '../components/Rooms/RoomCard';
 import RoomDetails from '../components/Rooms/RoomDetails';
