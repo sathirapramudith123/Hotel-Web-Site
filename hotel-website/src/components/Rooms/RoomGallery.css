@@ -1,0 +1,61 @@
+.room-gallery {
+  margin-bottom: 2rem;
+}
+
+.gallery-main {
+  height: 500px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.thumbnail {
+  flex: 0 0 100px;
+  height: 75px;
+  border: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: var(--transition-normal);
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border: 2px solid var(--primary-color);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .gallery-main {
+    height: 300px;
+  }
+  
+  .thumbnail {
+    flex: 0 0 80px;
+    height: 60px;
+  }
+}

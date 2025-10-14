@@ -19,4 +19,49 @@ const FeaturedRooms = () => {
           {featuredRooms.map(room => (
             <div key={room.id} className="room-card">
               <div className="room-image">
-                <img src={room.image
+                <img src={room.image} alt={room.name} />
+                <div className="room-price">
+                  {formatCurrency(room.price)}<span>/night</span>
+                </div>
+              </div>
+              
+              <div className="room-content">
+                <h3>{room.name}</h3>
+                <p>{room.description}</p>
+                
+                <div className="room-features">
+                  <div className="feature">
+                    <span>👥</span>
+                    {room.capacity} Guests
+                  </div>
+                  <div className="feature">
+                    <span>📏</span>
+                    {room.size}
+                  </div>
+                  <div className="feature">
+                    <span>🛏️</span>
+                    {room.beds}
+                  </div>
+                </div>
+                
+                <div className="room-actions">
+                  <Link to={`/rooms`} className="btn btn-primary">
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="section-cta">
+          <Link to="/rooms" className="btn btn-secondary">
+            View All Rooms
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedRooms;
