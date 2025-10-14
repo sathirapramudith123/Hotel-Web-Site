@@ -1,0 +1,29 @@
+.date-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.date-picker input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  font-family: inherit;
+}
+
+.date-picker input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+}
+
+.date-picker input.error {
+  border-color: #dc2626;
+}
