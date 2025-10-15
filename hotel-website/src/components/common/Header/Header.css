@@ -4,6 +4,13 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: var(--transition-normal);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
 }
 
 .header-content {
@@ -11,6 +18,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  position: relative;
 }
 
 .logo {
@@ -20,11 +28,21 @@
   color: var(--primary-color);
   font-size: 1.5rem;
   font-weight: 700;
+  transition: var(--transition-normal);
+}
+
+.logo:hover {
+  transform: translateY(-1px);
 }
 
 .logo img {
   height: 40px;
   margin-right: 10px;
+  transition: var(--transition-normal);
+}
+
+.header.scrolled .logo img {
+  height: 35px;
 }
 
 .header-actions {
@@ -33,6 +51,155 @@
   gap: 1rem;
 }
 
+/* Search Styles */
+.search-toggle,
+.user-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition-normal);
+  color: var(--text-color);
+}
+
+.search-toggle:hover,
+.user-toggle:hover {
+  background: var(--gray-100);
+  transform: scale(1.1);
+}
+
+/* User Menu */
+.user-menu {
+  position: relative;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-normal);
+}
+
+.user-menu:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition-fast);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.user-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.user-dropdown a:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Search Overlay */
+.search-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-normal);
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  margin-right: 0.5rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.search-submit {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  transition: var(--transition-normal);
+}
+
+.search-submit:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.search-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin-left: 1rem;
+  transition: var(--transition-normal);
+}
+
+.search-close:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Menu Toggle */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -40,6 +207,11 @@
   border: none;
   cursor: pointer;
   padding: 5px;
+  transition: var(--transition-normal);
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
 }
 
 .menu-toggle span {
@@ -63,6 +235,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -71,4 +244,43 @@
   .header-actions .btn {
     display: none;
   }
+
+  .user-dropdown {
+    right: -50px;
+    min-width: 160px;
+  }
+
+  .search-container {
+    padding: 0 1rem;
+  }
+
+  .search-input {
+    margin-right: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo span {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .search-toggle,
+  .user-toggle {
+    padding: 6px;
+  }
+}
+
+/* Animation for logo */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.logo:active {
+  animation: pulse 0.3s ease-in-out;
 }
