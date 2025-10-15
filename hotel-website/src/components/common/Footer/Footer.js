@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="contact-info">
               <p>📍 123 Luxury Avenue, City Center</p>
               <p>📞 +1 (555) 123-4567</p>
-              <p>✉️ info@grandhorizon.com</p>
+              <p>✉️ info@thegranddominion.com</p>
             </div>
           </div>
           
