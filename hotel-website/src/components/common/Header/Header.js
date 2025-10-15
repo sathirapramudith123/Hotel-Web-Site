@@ -16,7 +16,7 @@ const Header = () => {
         <div className="header-content">
           <Link to="/" className="logo">
             <img src="/images/logo.png" alt="Grand Horizon Hotel" />
-            <span>Grand Horizon</span>
+            <span>The Grand Dominion</span>
           </Link>
           
           <Navigation isMenuOpen={isMenuOpen} />
